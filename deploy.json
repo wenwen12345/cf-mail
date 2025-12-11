@@ -1,0 +1,33 @@
+{
+  "$schema": "https://deploy.workers.cloudflare.com/schemas/deploy.json",
+  "name": "cf-mail",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "cf-mail-db"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "R2",
+      "bucket_name": "cf-mail-storage"
+    }
+  ],
+  "secrets": [
+    {
+      "name": "ADMIN_PASSWORD",
+      "description": "登录密码"
+    },
+    {
+      "name": "JWT_SECRET",
+      "description": "JWT 签名密钥（随机字符串）"
+    }
+  ],
+  "vars": [
+    {
+      "name": "MAIL_DOMAIN",
+      "description": "邮箱域名",
+      "example": "example.com"
+    }
+  ]
+}
