@@ -24,7 +24,7 @@ settings.put('/settings', async (c) => {
 
   for (const [key, value] of Object.entries(body)) {
     if (!allowedKeys.includes(key)) continue
-    await c.env.DB.prepare('UPDATE settings SET value = ? WHERE key = ?').bind(value, key).run()
+    await c.env.DB.prepare('INSERT OR REPLACE INTO settings (key, value) VALUES (?, ?)').bind(key, value).run()
   }
 
   return c.json({ success: true })
