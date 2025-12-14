@@ -138,7 +138,7 @@ async function sendTelegramNotification(
 ): Promise<void> {
   try {
     const codeText = email.verificationCode ? `\n🔑 验证码: ${email.verificationCode}` : ''
-    const text = `📬 新邮件
+    const text = `📬 新邮件 #email
 
 📤 发件人: ${email.from}
 📥 收件人: ${email.to}
