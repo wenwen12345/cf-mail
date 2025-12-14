@@ -52,11 +52,12 @@ function getExtension(filename: string, contentType: string): string {
 // 尝试自动创建邮箱
 async function tryAutoCreateMailbox(db: D1Database, address: string): Promise<{ id: number } | null> {
   // 读取配置
-  const settings = await db.prepare('SELECT key, value FROM settings WHERE key LIKE ?').bind('auto_create_%').all()
+  const settings = await db.prepare("SELECT key, value FROM settings WHERE key LIKE 'auto_create_%'").all()
   const config: Record<string, string> = {}
   for (const row of settings.results as { key: string; value: string }[]) {
     config[row.key] = row.value
   }
+  console.log('Auto-create config:', JSON.stringify(config))
 
   if (config.auto_create_enabled !== 'true') return null
 
