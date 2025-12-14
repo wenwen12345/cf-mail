@@ -1,15 +1,8 @@
 name = "cf-mail"
 main = "src/index.ts"
 compatibility_date = "2024-01-01"
+account_id = "2a29e95bb5eda88bc89b88599efcb708"
 
-[[d1_databases]]
-binding = "DB"
-database_name = "cf_mail_db"
-database_id = ""
 
-[[r2_buckets]]
-binding = "R2"
-bucket_name = "cf-mail-storage"
-
-[assets]
-directory = "public"
+# 极简版配置：只需要邮件接收和Telegram推送
+# 不需要数据库和存储

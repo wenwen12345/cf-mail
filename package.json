@@ -1,13 +1,11 @@
 {
   "name": "cf-mail",
-  "version": "1.0.0",
+  "version": "2.0.0",
+  "description": "极简邮件转发到Telegram - 邮件接收 → 解析 → 验证码提取 → TG推送",
   "type": "module",
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy"
-  },
-  "dependencies": {
-    "hono": "^4.10.8"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20251211.0",
